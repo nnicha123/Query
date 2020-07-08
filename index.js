@@ -10,7 +10,11 @@ app.get('/contact',(req,res) => {
 })
 app.get('/add',(req,res) => {
     const added = Number(req.query.a) + Number(req.query.b)
-    res.status(200).send({message:'a + b = ' + added})
+    res.status(200).send({message:`${req.query.a} + ${req.query.b} = ${added}`})
+})
+app.get('/multiply',(req,res) => {
+    const multiply = Number(req.query.a)*Number(req.query.b)
+    res.status(200).send({message:`${req.query.a} x ${req.query.b} = ${multiply}`})
 })
 app.get('/message',(req,res) => {
     const rounds = req.query.times
